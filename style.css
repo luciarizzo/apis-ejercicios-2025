@@ -64,24 +64,65 @@ body.dark-mode {
   border: 1px solid #dadce0;
 }
 
-#botonMode {
+/* The switch - the box around the slider */
+.switch {
   position: absolute;
   top: 20px;
   right: 20px;
-  padding: 10px 20px;
-  border: none;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-  color: #3c4043;
-  font-size: 14px;
-  cursor: pointer;
-  border: 1px solid #f8f9fa;
+  width: 60px;
+  height: 34px;
+  display: inline-block;
 }
 
-.dark-mode #botonMode {
-  background-color: #303134;
-  color: white;
-  border-color: #5f6368;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.dark-mode input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .dark-mode .search-box {
