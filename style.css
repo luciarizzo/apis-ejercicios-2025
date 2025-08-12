@@ -6,7 +6,17 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  transition: all 0.3s ease;
+}
+
+body.light-mode {
   background-color: white;
+  color: #3c4043;
+}
+
+body.dark-mode {
+  background-color: #202124;
+  color: white;
 }
 
 .logo {
@@ -52,4 +62,84 @@ body {
 
 .buttons button:hover {
   border: 1px solid #dadce0;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 34px;
+  display: inline-block;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.dark-mode input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.dark-mode .search-box {
+  background-color: #303134;
+  border-color: #5f6368;
+}
+
+.dark-mode .search-box input {
+  color: white;
+}
+
+.dark-mode .buttons button {
+  background-color: #303134;
+  color: white;
+  border-color: #5f6368;
+}
+
+.dark-mode .buttons button:hover {
+  border-color: #8ab4f8;
 }
