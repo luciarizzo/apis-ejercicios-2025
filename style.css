@@ -109,7 +109,7 @@ input:checked + .slider {
 }
 
 .dark-mode input:checked + .slider {
-  background-color: #4CAF50;
+  background-color: #3430a6;
 }
 
 input:checked + .slider:before {
