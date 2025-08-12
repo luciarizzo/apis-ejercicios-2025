@@ -6,7 +6,17 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  transition: all 0.3s ease;
+}
+
+body.light-mode {
   background-color: white;
+  color: #3c4043;
+}
+
+body.dark-mode {
+  background-color: #202124;
+  color: white;
 }
 
 .logo {
@@ -52,4 +62,43 @@ body {
 
 .buttons button:hover {
   border: 1px solid #dadce0;
+}
+
+#botonMode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #f8f9fa;
+}
+
+.dark-mode #botonMode {
+  background-color: #303134;
+  color: white;
+  border-color: #5f6368;
+}
+
+.dark-mode .search-box {
+  background-color: #303134;
+  border-color: #5f6368;
+}
+
+.dark-mode .search-box input {
+  color: white;
+}
+
+.dark-mode .buttons button {
+  background-color: #303134;
+  color: white;
+  border-color: #5f6368;
+}
+
+.dark-mode .buttons button:hover {
+  border-color: #8ab4f8;
 }
