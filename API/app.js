@@ -11,25 +11,20 @@ async function cargarUsuarios() {
 
     // Llamada a la API
     const resp = await fetch("https://jsonplaceholder.typicode.com/users");
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const usuarios = await resp.json();
+    const usuarios = await resp.json(); // Convertimos a JSON
 
     // Render
-    if (!Array.isArray(usuarios) || usuarios.length === 0) {
-      tablaBody.innerHTML = `<tr><td class="center" colspan="4">No hay usuarios</td></tr>`;
-    } else {
-      tablaBody.innerHTML = ""; // limpiamos
-      usuarios.forEach(user => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${user.id}</td>
-          <td>${user.name}</td>
-          <td>${user.email}</td>
-          <td>${user.address?.city ?? "-"}</td>
-        `;
-        tablaBody.appendChild(tr);
-      });
-    }
+    tablaBody.innerHTML = ""; // limpiamos
+    usuarios.forEach(user => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.address.city}</td>
+      `;
+      tablaBody.appendChild(tr);
+    });
 
     estado.textContent = "Listo ✅";
   } catch (err) {
@@ -41,5 +36,4 @@ async function cargarUsuarios() {
   }
 }
 
-// Click en el botón para traer usuarios
 boton.addEventListener("click", cargarUsuarios);
