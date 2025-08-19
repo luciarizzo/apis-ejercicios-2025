@@ -4,7 +4,6 @@ const estado = document.getElementById("estado");
 
 async function cargarUsuarios() {
   try {
-    // UI: loading
     boton.disabled = true;
     estado.textContent = "Cargando...";
     tablaBody.innerHTML = `<tr><td class="center" colspan="4">Cargando...</td></tr>`;
