@@ -1,6 +1,6 @@
 const tablaBody = document.querySelector("#tablaUsuarios tbody");
-const boton = document.getElementById("btnUsuarios");
-const estado = document.getElementById("estado");
+const boton = document.querySelector("#btnUsuarios");
+const estado = document.querySelector("#estado");
 
 async function cargarUsuarios() {
   try {
