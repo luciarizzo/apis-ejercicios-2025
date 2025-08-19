@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Usuarios desde API</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+    h1 { margin-bottom: 12px; }
+    button { 
+      padding: 8px 14px; 
+      border: 0; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      background: #2563eb; 
+      color: #fff; 
+    }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    .toolbar { display:flex; gap:12px; align-items:center; margin-bottom:16px; }
+    .status { min-height: 22px; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { background:#f3f4f6; }
+    th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; }
+    .center { text-align:center; color:#6b7280; }
+  </style>
+</head>
+<body>
+  <h1>Lista de Usuarios</h1>
+
+  <div class="toolbar">
+    <button id="btnUsuarios">Traer usuarios</button>
+    <span id="estado" class="status"></span>
+  </div>
+
+  <table id="tablaUsuarios">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Ciudad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="center" colspan="4">Sin datos todavía</td></tr>
+    </tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
